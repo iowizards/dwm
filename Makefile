@@ -6,7 +6,7 @@ include config.mk
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
 
-all: options dwm
+all: options patch dwm
 
 options:
 	@echo dwm build options:
@@ -23,6 +23,11 @@ ${OBJ}: config.h config.mk
 config.h:
 	@echo creating $@ from config.def.h
 	@cp config.def.h $@
+
+patch:
+	@patch -p1 <patches/dwm-10e232f9ace7-pertag.diff 
+	@patch -p1 <patches/dwm-6.0-attachabove.diff 
+	@patch -p1 <patches/dwm-6.1-systray.diff 
 
 dwm: ${OBJ}
 	@echo CC -o $@
