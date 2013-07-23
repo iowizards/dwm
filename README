@@ -2,6 +2,12 @@ dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
 
+This is the IO Wizards custom dwm fork.
+
+Current changes include:
+pertag patch
+systray patch
+attachabove patch
 
 Requirements
 ------------
